@@ -11,9 +11,7 @@ function Box2() {
       <Internalbar width="614px" backgroundColor="transparent" boxShadow="none" marginLeft="55px" showTopButton={false} showDownButtons={true} />
       <Leftbar/>
       <div className='flexsrj'>
-<Images/>
-<Images/>
-<Images/>
+
       </div>
     </div>
     </div>

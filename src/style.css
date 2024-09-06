@@ -137,10 +137,10 @@ padding-top: 10px;
     width: 100%;
 }
 
-.images{
+/* .images{
     height: 150px;
     width: 150px;
-    background-image: url('H:\lunacalassign\srijantrip\public\images\Rectangle 5160.png');
+    background-image: url('\images\Rectangle 5160.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -149,7 +149,7 @@ padding-top: 10px;
     border-radius: 20px;
 
     
-}
+} */
 .flexsrj {
     display: flex; 
     flex-direction: row; 

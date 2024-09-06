@@ -46,6 +46,7 @@ export const FileUploader = ({ handleFile, setUploadedImages, uploadedImages }) 
 
 function Internalbar({ backgroundColor, width, boxShadow, marginLeft, showTopButtons, showDownButtons }) {
     const [uploadedImages, setUploadedImages] = useState([]);
+    const [activeImages, setActiveImages] = useState([]);
     const style = {
         backgroundColor: backgroundColor || 'defaultColor',
         width: width || 'defaultWidth',
@@ -73,8 +74,25 @@ function Internalbar({ backgroundColor, width, boxShadow, marginLeft, showTopBut
     const handleFileUpload = (file) => {
         // console.log('Uploaded file:', file); // Handle the uploaded file here
         var url = URL.createObjectURL(file);
-        setUploadedImages([...uploadedImages, url])
+        setUploadedImages([...uploadedImages, url]);
+        if (activeImages.length < 3) {
+            console.log(activeImages.length)
+            setActiveImages([...activeImages, url]);
+        }
     };
+
+    const handleSlide = (idx) => {
+        if (idx) {
+            const newActiveImages = uploadedImages.slice(2, 5);
+            console.log(uploadedImages.slice(2, uploadedImages.length))
+            setActiveImages(newActiveImages)
+        } else {
+            const newActiveImages = uploadedImages.slice(0, 3);
+            console.log(uploadedImages.slice(0, 3));
+
+            setActiveImages(newActiveImages)
+        }
+    }
 
     return (
         <div className='internalrect' style={style}>
@@ -86,28 +104,37 @@ function Internalbar({ backgroundColor, width, boxShadow, marginLeft, showTopBut
                 </>
             )}
             {showDownButtons && (
-                <div style={{display:"flex", flexDirection:"column",}}>
-                    <div style={{display: "flex", justifyContent:"space-between", gap:"2rem", }}>
+                <div style={{ display: "flex", flexDirection: "column", marginTop: "10rem", gap: "2rem" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: "2rem", }}>
 
                         <Downbutton label1="Gallery" />
 
                         <FileUploader handleFile={handleFileUpload} uploadedImages={uploadedImages} setUploadedImages={setUploadedImages} />
 
-                        <div style={iconContainer}>
+                        <div onClick={() => { handleSlide(false) }} style={iconContainer}>
                             <ArrowLeftOutlined style={iconStyle} />
                         </div>
-                        <div style={iconContainer}>
+                        <div onClick={() => { handleSlide(true) }} style={iconContainer}>
                             <ArrowRightOutlined style={iconStyle} />
                         </div>
                     </div>
 
-                    <div>
+                    <div style={{ display: "flex", justifyContent: "center", gap: '2rem', margin: '0 auto' }}>
                         {
-                            uploadedImages && uploadedImages.map((img, idx) => (
-                                <img src={img} width={150} height={150} />
+                            activeImages && activeImages.map((img, idx) => (
+                                <img key={idx} src={img} width={150} height={150} />
                             ))
                         }
+                        {
+                              activeImages.length ===  0&& 
+                            <>
+                              <img src="\images\Rectangle 5160.png" width={150} height={150} />
+                              <img src="\images\Rectangle 5160.png" width={150} height={150} />
+                              <img src="\images\Rectangle 5160.png" width={150} height={150} />
+                            </>
+                        }
                     </div>
+
                 </div>
             )}
         </div>
