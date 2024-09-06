@@ -51,7 +51,7 @@ height: 175px;
 top: 210px;
 left: 975px;
 gap: 0px;
-opacity: 0px;
+
 margin-left: 57px;
 margin-top: 20px;
 }
@@ -71,7 +71,6 @@ height: Hug (159.69px)px;
 top: 116px;
 left: 934px;
 gap: 105px;
-opacity: 0px;
 background-color: rgb(54, 60, 67);
 display: flex;
 justify-content: flex-start; 
@@ -100,7 +99,7 @@ padding-top: 10px;
     top: 403px;
     left: 700px;
     gap: 0px;
-    opacity: 0px;
+    
     background: #363C43;
     position: absolute;
     border-radius: 10px;   
@@ -137,19 +136,7 @@ padding-top: 10px;
     width: 100%;
 }
 
-/* .images{
-    height: 150px;
-    width: 150px;
-    background-image: url('\images\Rectangle 5160.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-left: 50px;
-    margin-top: 20px;
-    border-radius: 20px;
 
-    
-} */
 .flexsrj {
     display: flex; 
     flex-direction: row; 
@@ -176,7 +163,6 @@ top: 380px;
 left: 750px;
 gap: 0px;
 border-radius: 2.46px 0px 0px 0px;
-opacity: 0px;
 background: linear-gradient(180deg, rgba(40, 40, 40, 0.1) 0%, rgba(248, 248, 248, 0.1) 100%),
 linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 box-shadow: 0px 4px 4px 0px #00000054;
